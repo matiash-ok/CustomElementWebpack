@@ -1,0 +1,37 @@
+{
+  "name": "create-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon webpack",
+    "build": "webpack && echo bigote",
+    "createcomponent": "webpack && echo bigote"
+  },
+  "author": "Gabriel Caruso",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.2",
+    "express": "^4.17.1",
+    "extract-loader": "^5.1.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "jquery": "^3.6.0",
+    "nodemon": "^2.0.13",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-middleware": "^5.2.1"
+  },
+  "dependencies": {
+    "css-loader": "^6.5.1",
+    "ejs": "^3.1.6",
+    "ejs-loader": "^0.5.0",
+    "ejs-webpack-loader": "^2.2.2",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.45.2",
+    "sass-loader": "^12.4.0"
+  }
+}
