@@ -59,17 +59,12 @@ module.exports = {
           
         ]
 },
-/*   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }),
-    new HtmlWebpackPlugin(), // Default index.html
-    new HtmlWebpackPlugin({  // HTMLS
-      filename: 'datosEnvio.html',
-      template: 'src/views/pages/datosEnvio.html'
-    })
-  ] */
+  plugins: [
+/*     new HtmlWebpackPlugin({  // HTMLS
+      filename: 'jaja.html',
+      template: 'src/views/pages/jaja.html',
+      inject:'body'
+    }) */
+  ]
       
   };

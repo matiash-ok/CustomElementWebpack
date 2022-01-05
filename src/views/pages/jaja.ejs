@@ -9,6 +9,16 @@
 <body>
     <h1>CHETO LO NENE</h1>
     <% include partials/jajant.ejs %> 
+    <busca-dor></busca-dor>
+
+    <div id="saludador">hola</div>
+    <script>
+        const saludador=document.getElementById("saludador")
+        saludador.addEventListener("message", (event) => {
+            const name = event.detail.name;
+            console.log(`Message received from ${name}`);
+  },true);
+    </script>
     <script src="bundle.min.js"></script>
 </body>
 </html>

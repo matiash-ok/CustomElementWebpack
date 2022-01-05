@@ -9,7 +9,7 @@
     "build": "webpack && echo bigote",
     "createcomponent": "webpack && echo bigote"
   },
-  "author": "Gabriel Caruso",
+  "author": "Gabriel Caruso , Matias Hurtado",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.8",
