@@ -1,6 +1,6 @@
 {
   "name": "create-component",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "webpack && echo bigote",
     "createcomponent": "webpack && echo bigote"
   },
-  "author": "Gabriel Caruso , Matias Hurtado",
+  "author": "Matias Hurtado",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.8",

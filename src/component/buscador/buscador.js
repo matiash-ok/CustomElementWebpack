@@ -16,6 +16,7 @@ class Buscador extends HTMLElement {
         this.shadowRoot.innerHTML += buscadorTemplate;
     }
     handleEvent(event) {
+        console.log("pasa algo")
         if (event.type === "click") {
           const MessageEvent = new CustomEvent("message", {
             detail: { from: "Manz", message: "Hello!" },
@@ -35,7 +36,7 @@ class Buscador extends HTMLElement {
         this.render()
         buscadorFn.saludar();
         this.byebye();
-        this.shadowRoot.addEventListener("click", this);
+        this.shadowRoot.addEventListener("click", e => this.handleEvent(e));
     }
 }
 
