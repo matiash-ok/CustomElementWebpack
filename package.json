@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon webpack",
     "build": "webpack && echo bigote",
+    "build:watch":"webpack --watch",
     "createcomponent": "webpack && echo bigote"
   },
   "author": "Matias Hurtado",

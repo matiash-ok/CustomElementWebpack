@@ -10,16 +10,19 @@
     <div id="saludador">
     <h1 id="titulo">CHETO LO NENE</h1>
     <% include partials/jajant.ejs %> 
-    <app-buscador></app-buscador>
+    <app-buscador nombre="alfarodriguez"></app-buscador>
     <app-tester></app-tester>
     </div>
     <script>
+        
         const h1 = document.getElementById("titulo")
         const saludador=document.getElementById("saludador")
         saludador.addEventListener("message", (event) => {
             h1.innerText = (event.detail.title+"");
             console.log(`Event received`);
   });
+    
+        h1.addEventListener("click",()=>document.querySelector("app-buscador").setAttribute("nombre","ricardo"))
     </script>
     <script src="bundle.min.js"></script>
 </body>

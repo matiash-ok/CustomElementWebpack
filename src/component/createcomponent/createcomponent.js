@@ -6,13 +6,7 @@ export function initComponent(componente,funciones={}){
           this.element = new componente();
           this.attachShadow({mode:"open"})
         }
-
-        static get observedAttributes()
-            { 
-                const attributeNodeArray = [...this.attributes]
-                return attributeNodeArray; 
-            }
-
+        
         render() {
             var style = document.createElement("style");
             style.textContent = Array.isArray(this.element)? this.element[1].toString():"";
@@ -35,14 +29,14 @@ export function initComponent(componente,funciones={}){
             }
         }
         attributeChangedCallback(name, oldValue, newValue) {
-
-            if(funciones.attributeChangedCallback){
-                funciones.attributeChangedCallback.map(funcion => funcion(this))
-            }
-            
+            console.log(name)
+            console.log(oldValue)
+            console.log(newValue)
           }
+        static get observedAttributes(){}
   }
-    window.customElements.define(`app-${componente.name}`, Component);
+    customElements.define(`app-${componente.name}`, Component);
+    
   }
   
   
