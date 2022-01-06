@@ -8,15 +8,18 @@
 </head>
 <body>
     <div id="saludador">
-
-        <h1>CHETO LO NENE</h1>
-        <% include partials/jajant.ejs %> 
-        <busca-dor></busca-dor>
-        
+    <h1 id="titulo">CHETO LO NENE</h1>
+    <% include partials/jajant.ejs %> 
+    <app-buscador></app-buscador>
+    <app-tester></app-tester>
     </div>
     <script>
+        const h1 = document.getElementById("titulo")
         const saludador=document.getElementById("saludador")
-        saludador.addEventListener("message",e => console.log("hola",e))
+        saludador.addEventListener("message", (event) => {
+            h1.innerText = (event.detail.title+"");
+            console.log(`Event received`);
+  });
     </script>
     <script src="bundle.min.js"></script>
 </body>
