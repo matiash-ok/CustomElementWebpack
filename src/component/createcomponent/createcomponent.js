@@ -1,6 +1,17 @@
-export function initComponent(componente,funciones={}){
+export function initComponent(componente,funciones={},arrayAttributes=[]){
     
-    class Component extends HTMLElement{
+    const AttrInit = (SuperClass)=>class extends SuperClass{
+        constructor(){
+            super()
+            console.log("hola")
+        }
+        static get observedAttributes(){
+            return arrayAttributes
+        }
+
+    }
+    customElements.define(`app-${componente.name}`,
+    class extends AttrInit(HTMLElement){
         constructor(){
           super();
           this.element = new componente();
@@ -29,14 +40,12 @@ export function initComponent(componente,funciones={}){
             }
         }
         attributeChangedCallback(name, oldValue, newValue) {
-            console.log(name)
-            console.log(oldValue)
-            console.log(newValue)
+            if(funciones.attributeChangedCallback){
+                funciones.attributeChangedCallback.map(funcion => funcion(this,name,oldValue,newValue))
+            }
           }
-        static get observedAttributes(){}
-  }
-    customElements.define(`app-${componente.name}`, Component);
-    
+       
+  })  
   }
   
   

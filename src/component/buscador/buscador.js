@@ -15,7 +15,7 @@ const funciones = {
   "connectedCallback":[agregarEventListeners],
   "attributeChangedCallback":[cambiaNombre]
 }
-initComponent(buscador,funciones)
+initComponent(buscador,funciones,["nombre"])
 
 
   
