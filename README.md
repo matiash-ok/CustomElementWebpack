@@ -2,7 +2,7 @@
 
 ## Como crear un Custom Element usando initComponent
 
-    import {initComponent} from "./" 
+    import initComponent from "./" 
     function ejemplo(){
             ejemplostyle=`
                             .ejemplo{
@@ -45,7 +45,7 @@
 
 **attributeChangedCallback**
 ### Es la funcion que sucede cuando se cambia un atributo del componente 
-
+### envia el valor anterior , el actual y el attributo que cambio 
 ## Si se desea que las funciones se activen en algunos de los ciclos de vida se debe enviar un objeto 
 
     funcion saludar(componente){
@@ -54,14 +54,30 @@
     funcion saludar(componente){
         console.log("despedir")
     }
+    function preguntar(name,old,new){
+        console.log(`cambiaste el [${name}] de ${old} por ${new} `)
+    }
     const funciones={
         "connectedCallback":saludar
         "disconnectedCallback":despedir
+        "attributeChangedCallback":preguntar
     }
     initComponent(ejemplo,funciones)
 
+## Atributos observables
+
+### Para comunicarse los padres con los hijos se usan los atributos observables.
+### Estos son los atributos del tag comunes , pero con la especialidad que si se declaran en la funcion init , el componente va a estar pendiente de algun cambio en dicho atributo mediante la funcion attributeChangedCallback 
+
+     initComponent(ejemplo,funciones,["fecha"])
+
+    <app-ejemplo fecha="julio"></app-ejemplo>
+
+
+
 ## SLOTS 
 
+### Si desea incluir el Hijo dentro del custom element se necesita incluir el tag <slot> donde se quiera que este 
 
             ejemplotemplate=`
                             <div class="ejemplo">
@@ -87,8 +103,9 @@
 
 
 
-
-### Usar doble %% para que webpack no compile la linea del ejs 
+# -----------------------------------------------------------------------------------------------------------------------------
+### Datazo
+#### Usar doble %% para que webpack no compile la linea del ejs 
 **Input**:
 
     `<%%= algo %%>`
